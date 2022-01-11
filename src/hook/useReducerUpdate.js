@@ -5,7 +5,6 @@ function useReducerUpdate(reducer, initialState, init) {
   //https://github.com/facebook/react/issues/14994#issuecomment-618551379
   const [state, dispatch] = useReducer(
     (state, action) => action,
-    // typeof init === "function" ? init(initialState) : initialState
     initialState,
     init
   );
