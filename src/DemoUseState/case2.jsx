@@ -1,11 +1,11 @@
-import React, { useState, useLayoutEffect, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 
 function Case2() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(() => {
+    console.log("init useState");
+    return 0;
+  });
   const countMemo = useMemo(() => {
-    //用memo是为了避免在bailing out时再计算一遍
-    //但是这种解决方案依然还会重新渲染一次,虽然用了useMemo可以节省开销
-    //https://github.com/facebook/react/issues/14994
     console.log("run count memo...");
     return count;
   }, [count]);
@@ -15,7 +15,7 @@ function Case2() {
   function handleClick() {
     const num = count == 2 ? 2 : count + 1;
     setCount(num);
-    console.log(num == countLast.current, "set num", num, "last count:", countLast.current, "current:", null);
+    console.log(num == countLast.current, "set num", num, "last count:", countLast.current, "current:", undefined);
   }
   useEffect(() => {
     countLast.current = count;
@@ -26,8 +26,13 @@ function Case2() {
     <div>
       <button onClick={handleClick}>Next</button>
       {countMemo}
+      <TheChild></TheChild>
     </div>
   );
 }
 
+function TheChild() {
+  console.log("I am child");
+  return <div></div>;
+}
 export default Case2;

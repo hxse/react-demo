@@ -1,6 +1,12 @@
 {
-  "name": "react-demo",
+  "name": "react-hook-update",
   "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./hook/useReducerUpdate": "./hook/useReducerUpdate.js",
+    "./hook/useStateUpdate": "./hook/useStateUpdate.js"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
