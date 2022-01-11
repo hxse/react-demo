@@ -1,4 +1,5 @@
 # react-demo
+* npm install react-hook-update
 
 * Case1, The original version of useReducer: One more re-render with virtual DOM.
   The Child virtual Dom Will not be re-render.
