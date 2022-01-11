@@ -1,6 +1,14 @@
 {
   "name": "react-hook-update",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": "hxse",
+  "repository": "https://github.com/hxse/react-hook-update",
+  "keywords": [
+    "react hook",
+    "react custom hook",
+    "useState",
+    "useReducer"
+  ],
   "type": "module",
   "exports": {
     ".": "./src/index.js",
